@@ -34,6 +34,7 @@
             </div>
             <div class="panel-body">
                 <table class="table table-bordered" id="trainTable">
+                    <thead>
                     <tr>
                         <th>Train Name</th>
                         <th>Train Destination</th>
@@ -41,6 +42,10 @@
                         <th>Next Train Arrival</th>
                         <th>Minutes Away</th>
                     </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
                 </table>
             </div>
         </div>
@@ -80,7 +85,7 @@
         </div>
     </div>
 
-     <script>
+    <script>
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyAKx6nqXSSVnorqBPtga2a2lWFHFT3vH3g",
@@ -93,18 +98,18 @@
         firebase.initializeApp(config);
     </script>
 
-<!-- link to jquery library -->
+    <!-- link to jquery library -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    
-    <!-- Link to Moment.js should go here -->
-  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    <!-- Link to Moment.js should go here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-        
+
     <!-- link to javascript file -->
-        <script src="./assets/javascript/train_schedule.js"></script>
+    <script src="./assets/javascript/train_schedule.js"></script>
 </body>
 
 </html>
