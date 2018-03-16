@@ -33,12 +33,31 @@ $(document).ready(function () {
         console.log("freq " + childSnapshot.val().freq);
         console.log("date added " + childSnapshot.val().dateAdded);
 
-        var tMinutesTillTrain = 0;
-        var nextTrainConverted = 0;
+        var firstTime = childSnapshot.val().time;
+        var trainFreq = childSnapshot.val().freq;
+        console.log("arrvl time "+firstTime);
+        //var tMinutesTillTrain = 0;
+        //var nextTrainConverted = 0;
+
+        //current time
+        var currentTime = moment();
+
+        //difference between train arrival time and current time
+        var diffTime = moment().diff(moment(firstTime), "minutes");
+
+        //time apart
+        var tRemainder = diffTime % trainFreq;
+
+        //minutes until the next train arrives
+        var tMinutesTillTrain = trainFreq - tRemainder;
+
+        //next train will arrive
+        var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+        var nextTrainConverted = moment(nextTrain).format("hh:mm a");
 
         var newRowContent = "<tr><td>" + childSnapshot.val().name + "</td><td>" + childSnapshot.val().dest + "</td><td>" + childSnapshot.val().freq + "</td><td>" + nextTrainConverted + "</td><td>" + tMinutesTillTrain + "</td></tr>"
         $("#trainTable tbody").append(newRowContent);
-        
+
     }, function (errorObject) {
         console.log("Errors handled: " + errorObject.code);
     });//closes the child added function
