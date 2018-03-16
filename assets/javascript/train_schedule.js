@@ -27,17 +27,15 @@ $(document).ready(function () {
 
     //when a new train is added, do this 
     database.ref().on("child_added", function (childSnapshot) {
-        console.log("name " + childSnapshot.val().name);
-        console.log("dest " + childSnapshot.val().dest);
-        console.log("time " + childSnapshot.val().time);
-        console.log("freq " + childSnapshot.val().freq);
-        console.log("date added " + childSnapshot.val().dateAdded);
+        //console.log("name " + childSnapshot.val().name);
+        //console.log("dest " + childSnapshot.val().dest);
+        //console.log("time " + childSnapshot.val().time);
+        //console.log("freq " + childSnapshot.val().freq);
+        //console.log("date added " + childSnapshot.val().dateAdded);
 
         var firstTime = childSnapshot.val().time;
         var trainFreq = childSnapshot.val().freq;
-        console.log("arrvl time "+firstTime);
-        //var tMinutesTillTrain = 0;
-        //var nextTrainConverted = 0;
+        //console.log("arrvl time "+firstTime);
 
         //current time
         var currentTime = moment();
